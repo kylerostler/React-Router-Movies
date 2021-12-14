@@ -3,10 +3,13 @@ import axios from 'axios';
 import { useParams, useRouteMatch } from 'react-router-dom';
 
 export default function Movie(props) {
+  const { items } = props;
   const [movie, setMovie] = useState();
   const { url, path } = useRouteMatch();
-   let id = 3;
+  const { itemID } = useParams();
 
+  let id = 3;
+  // let id = items.find(element => element.id === parseInt(itemID));
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
 
